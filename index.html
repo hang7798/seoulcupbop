@@ -53,6 +53,19 @@
     footer {text-align:center;padding:50px 10px;font-size:0.95em;color:#888;}
     .btn {display:inline-block;margin-top:35px;padding:14px 30px;border:1px solid #fff;text-decoration:none;color:#fff;border-radius:4px;transition:0.3s;font-size:1.1em;}
     .btn:hover {background:#fff;color:#222;}
+  .naver-btn {
+      background:#03c75a;
+      border:1px solid #03c75a;
+      color:#fff !important;
+      font-weight:600;
+      padding:14px 30px;
+      border-radius:6px;
+      transition:0.25s;
+    }
+    .naver-btn:hover {
+      background:#02b451;
+      border-color:#02b451;
+    }
   </style>
 </head>
 <body>
@@ -86,8 +99,10 @@
   <section id="location">
     <h2>매장 위치</h2>
     <p>서울 관악구 봉천동 인헌길 6, 1층 102호 (낙성대입구역 도보 3분)</p>
-    <iframe class="map" src="https://www.google.com/maps?q=서울+관악구+봉천동+인헌길+6&output=embed"></iframe>
-  </section>
+
+    <!-- 네이버 지도 버튼만 표시 -->
+    <a href="https://naver.me/FgTZrUGt" target="_blank" class="btn naver-btn" style="margin-top:25px; display:inline-block;">네이버 지도에서 보기</a>
+</section>
 
   <section id="sns">
     <h2>SNS & 후기</h2>
@@ -104,4 +119,6 @@
   </footer>
 </body>
 </html>
+
+
 
