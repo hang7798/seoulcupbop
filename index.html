@@ -2,123 +2,387 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>서울컵밥 | 낙성대입구역 가성비 맛집</title>
-  <meta name="description" content="낙성대입구역 3분, 2,800원부터 즐기는 서울컵밥! 가성비 힙밥집." />
-  <meta property="og:title" content="서울컵밥 | 낙성대입구역 가성비 맛집" />
-  <meta property="og:description" content="서울에서 2,800원으로 한 끼 행복하게 🍚" />
-  <meta property="og:image" content="https://seoulcupbop.netlify.app/og-image.jpg" />
-  <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>서울컵밥</title>
+  <!-- Open Graph (카톡/페북/메신저 미리보기) -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="서울컵밥" />
+<meta property="og:description" content="가볍게 먹는 든든한 한 끼. 3,300원으로 즐기는 컵밥 + 크로플 콜라보." />
+<meta property="og:url" content="https://seoulcupbop.com/" />
+<meta property="og:image" content="https://seoulcupbop.com/og.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:site_name" content="서울컵밥" />
+
+<!-- Twitter (X) 미리보기 -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="서울컵밥" />
+<meta name="twitter:description" content="가볍게 먹는 든든한 한 끼. 컵밥 + 크로플까지." />
+<meta name="twitter:image" content="https://seoulcupbop.com/og.jpg" />
+
+
+  <meta name="description" content="가볍게 먹는 든든한 한 끼. 3,300원으로 즐기는 컵밥과 크로플까지 함께하는 서울컵밥." />
+  <meta name="keywords" content="서울컵밥, 컵밥, 가성비맛집, 테이크아웃, 크로플" />
+
   <style>
+    * {margin:0; padding:0; box-sizing:border-box;}
     body {
-      font-family:'Noto Sans KR',sans-serif;
-      margin:0;
-      color:#222;
-      background:#fff;
-      line-height:1.7;
-      font-size:1.05em;
+      font-family:-apple-system, BlinkMacSystemFont, "Segoe UI",
+                   "Apple SD Gothic Neo", Roboto, sans-serif;
+      color:#111;
+      line-height:1.6;
     }
-    header {
-      text-align:center;
-      height:100vh;
+    a {text-decoration:none; color:inherit;}
+
+    .container {max-width:1100px; margin:0 auto;}
+
+    /* ===== 히어로 ===== */
+    .hero {
       display:flex;
-      flex-direction:column;
-      justify-content:center;
       align-items:center;
-      border-bottom:1px solid #eee;
+      justify-content:center;
+      text-align:center;
+      color:#fff;
       position:relative;
-      background-image:url('images/header-bg.jpg');
       background-size:cover;
       background-position:center;
+    }
+    .hero::after {
+      content:"";
+      position:absolute;
+      inset:0;
+      background:rgba(0,0,0,0.45);
+    }
+    .hero-inner {
+      position:relative;
+      z-index:1;
+      padding:24px;
+    }
+
+    header.hero {
+      height:100vh;
+      background-image:url("images/header-bg.jpg");
+    }
+
+    .hero-inner img {
+      width:220px;
+      margin-bottom:22px;
+    }
+
+    header h1 {
+      font-size:2.4rem;
+      margin-bottom:6px;
+      opacity:.9
+    }
+
+    .hero-intro {
+      font-size:1.15rem;
+      margin-bottom:6px;
+      opacity:0.7;
+    }
+
+    .hero-sub {
+      font-size:1.25rem;
+      font-weight:600;
+      margin-bottom:22px;
+      opacity:0.8;
+    }
+
+    .btn {
+      display:inline-block;
+      padding:14px 26px;
+      border-radius:999px;
+      font-weight:600;
+      background:#fff;
+      color:#111;
+    }
+    .naver-btn {
+      background:#03c75a;
       color:#fff;
     }
-    header::after {
-      content:'';
-      position:absolute;
-      top:0;left:0;width:100%;height:100%;
-      background:rgba(0,0,0,0.45);
-      z-index:0;
+
+    /* ===== 컵밥 ↔ 크로플 사이 문구 ===== */
+    .between-copy {
+      padding:90px 20px;
+      text-align:center;
+      background:#fff;
     }
-    header * {position:relative;z-index:1;}
-    header img.logo {display:block;margin:0 auto 35px;width:200px;height:auto;}
-    header h1 {font-size:2.7em;margin-bottom:20px;}
-    header p {font-size:1.15em;color:#f5f5f5;}
-    section {max-width:900px;margin:0 auto;padding:70px 20px;border-bottom:1px solid #f2f2f2;}
-    h2 {font-size:1.6em;border-left:5px solid #222;padding-left:10px;margin-bottom:25px;}
-    section p {font-size:1.15em;}
-    .menu-table {width:100%;border-collapse:collapse;margin-top:20px;font-size:1.05em;}
-    .menu-table th,.menu-table td {border:1px solid #ddd;padding:14px;text-align:center;}
-    .menu-table th {background:#fafafa;}
-    .map {width:100%;height:300px;border:none;}
-    footer {text-align:center;padding:50px 10px;font-size:0.95em;color:#888;}
-    .btn {display:inline-block;margin-top:35px;padding:14px 30px;border:1px solid #fff;text-decoration:none;color:#fff;border-radius:4px;transition:0.3s;font-size:1.1em;}
-    .btn:hover {background:#fff;color:#222;}
-  .naver-btn {
-      background:#03c75a;
-      border:1px solid #03c75a;
-      color:#fff !important;
+    .between-copy h2 {
+      font-size:2rem;
+      margin-bottom:14px;
+    }
+    .between-copy p {
+      font-size:1.1rem;
+      opacity:0.85;
+      max-width:640px;
+      margin:0 auto;
+    }
+
+    /* ===== 크로플 이미지 ===== */
+    .croiffle-wrap {
+      padding:0 20px;
+    }
+    .hero-croiffle {
+      height:60vh;
+      background:url("images/croiffle.jpg") center/cover no-repeat;
+      border-radius:22px;
+    }
+    /* 크로플 이미지는 밝게 */
+    .hero-croiffle::after {
+      display:none;
+    }
+
+    /* ===== 섹션 공통 ===== */
+    section {
+      padding:70px 20px;
+      max-width:1100px;
+      margin:0 auto;
+    }
+    section h2 {
+      font-size:2rem;
+      text-align:center;
+      margin-bottom:30px;
+    }
+    .section-desc {
+      text-align:center;
+      font-size:1.05rem;
+      opacity:0.8;
+      margin-bottom:40px;
+      max-width:720px;
+      margin-left:auto;
+      margin-right:auto;
+    }
+
+    /* ===== 메뉴 (2컬럼) ===== */
+    .menu-wrap {
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:40px;
+    }
+    .menu-group {
+      border:1px solid #eee;
+      border-radius:20px;
+      padding:30px;
+    }
+    .menu-group h3 {
+      font-size:1.4rem;
+      margin-bottom:16px;
+      text-align:center;
+    }
+    .menu-subtitle {
+      font-size:1.05rem;
       font-weight:600;
-      padding:14px 30px;
-      border-radius:6px;
-      transition:0.25s;
+      margin:22px 0 10px;
+      border-bottom:1px solid #eee;
+      padding-bottom:6px;
     }
-    .naver-btn:hover {
-      background:#02b451;
-      border-color:#02b451;
+    .menu-list {
+      list-style:none;
+    }
+    .menu-list li {
+      display:flex;
+      justify-content:space-between;
+      padding:8px 0;
+      border-bottom:1px dashed #eee;
+      font-size:0.95rem;
+    }
+
+    /* ===== 브랜드 소개 ===== */
+    .brand-intro {
+      background:#f7f7f7;
+    }
+    .brand-icon {
+      display:block;
+      margin:24px auto 28px;
+      max-width:220px;
+      width:100%;
+      opacity:0.95;
+    }
+
+    /* ===== 인스타그램 ===== */
+    .instagram {
+      text-align:center;
+    }
+    .instagram a {
+      display:inline-block;
+      margin-top:18px;
+      font-weight:600;
+      color:#E1306C;
+    }
+
+    /* ===== 위치 ===== */
+    .location {
+      text-align:center;
+    }
+    .map-img {
+      width:100%;
+      max-width:900px;
+      border-radius:18px;
+      margin:0 auto 28px;
+      display:block;
+    }
+
+    /* ===== 푸터 ===== */
+    footer {
+      padding:40px 20px;
+      text-align:center;
+      font-size:0.9rem;
+      color:#777;
+      border-top:1px solid #eee;
+    }
+
+    /* ===== 모바일 ===== */
+    @media (max-width:900px){
+      .menu-wrap {grid-template-columns:1fr;}
+    }
+    @media (max-width:768px){
+      header h1 {font-size:2rem;}
+      .hero-inner img {width:250px;}
+      .hero-sub {font-size:1.1rem;}
+      .between-copy {padding:56px 20px;}
+      .hero-croiffle {height:42vh; border-radius:16px;}
+      .brand-icon {max-width:220px;}
     }
   </style>
 </head>
+
 <body>
-  <header>
-    <img src="images/dark-bglogo.png" alt="서울컵밥 로고" class="logo" />
-    <h1>서울컵밥</h1>
-    <p>서울에서 2,800원으로 한 끼 행복하게 🍚<br>낙성대입구역 3분 거리, 가성비 힙밥집</p>
-    <a href="#menu" class="btn">메뉴 보기</a>
-    <a href="#location" class="btn">지도 바로가기</a>
-  </header>
 
-  <section id="about">
-    <h2>브랜드 소개</h2>
-    <p>
-      서울컵밥은 서울 관악구 낙성대입구역 인근에서 시작된 ‘가성비 힙밥집’입니다.<br>
-      자취생, 대학생, 직장인 누구나 따뜻한 한 끼를 부담 없이 즐길 수 있도록<br>
-      정성껏 만든 컵밥을 제공합니다.
-    </p>
-  </section>
+<!-- 헤더 -->
+<header class="hero">
+  <div class="hero-inner">
+    <img src="images/dark-bglogo.png" alt="서울컵밥 로고">
+    <h1>서울컵밥</h1><br>
+    <p class="hero-intro">가볍게 먹는 든든한 한 끼</p>
+    <p class="hero-sub">3,300원으로 즐기는 컵밥 + 크로플까지</p><br><br>
+    <a href="https://naver.me/FgTZrUGt" target="_blank" class="btn naver-btn">
+      네이버 지도 바로가기
+    </a>
+  </div>
+</header>
 
-  <section id="menu">
-    <h2>메뉴 & 가격</h2>
-    <table class="menu-table">
-      <tr><th>분류</th><th>메뉴</th><th>가격</th></tr>
-      <tr><td>기본컵밥</td><td>양배추덮밥, 콩나물덮밥, 부추계란덮밥</td><td>2,800원</td></tr>
-      <tr><td>스페셜컵밥</td><td>잡채밥, 햄김치볶음밥</td><td>3,800원</td></tr>
-      <tr><td>프리미엄컵밥</td><td>닭갈비덮밥, 고추장불고기덮밥, 간장불고기덮밥</td><td>4,300원</td></tr>
-    </table>
-  </section>
+<!-- 중간 문구 -->
+<div class="between-copy">
+  <h2>오늘 한 끼, 여기서 끝내세요</h2>
+  <p>
+    빠르고 든든한 컵밥에<br>
+    식사 후 달콤한 디저트까지.<br>
+    서울컵밥은 한 끼의 흐름을 고민합니다.
+  </p>
+</div>
 
-  <section id="location">
-    <h2>매장 위치</h2>
-    <p>서울 관악구 봉천동 인헌길 6, 1층 102호 (낙성대입구역 도보 3분)</p>
+<!-- 크로플 이미지 -->
+<div class="croiffle-wrap">
+  <div class="container">
+    <section class="hero hero-croiffle"></section>
+  </div>
+</div>
 
-    <!-- 네이버 지도 버튼만 표시 -->
-    <a href="https://naver.me/FgTZrUGt" target="_blank" class="btn naver-btn" style="margin-top:25px; display:inline-block;">네이버 지도에서 보기</a>
+<!-- 메뉴 -->
+<section>
+  <h2>메뉴 & 가격</h2>
+  <p class="section-desc">
+    식사부터 디저트까지 한 번에 즐길 수 있는 구성
+  </p>
+
+  <div class="menu-wrap">
+    <!-- 왼쪽 -->
+    <div class="menu-group">
+      <h3>식사 메뉴</h3>
+
+      <div class="menu-subtitle">컵밥</div>
+      <ul class="menu-list">
+        <li><span>양배추덮밥</span><b>3,300원</b></li>
+        <li><span>부추비빔밥</span><b>3,300원</b></li>
+        <li><span>잡채밥</span><b>3,800원</b></li>
+        <li><span>햄김치볶음밥</span><b>3,800원</b></li>
+        <li><span>닭갈비덮밥</span><b>4,800원</b></li>
+        <li><span>간장불고기덮밥</span><b>4,800원</b></li>
+        <li><span>서울컵볶이</span><b>4,800원</b></li>
+      </ul>
+
+      <div class="menu-subtitle">사이드</div>
+      <ul class="menu-list">
+        <li><span>튀김 (만두/돈가스/김말이/너겟)</span><b>1,000원</b></li>
+        <li><span>**곤약밥 변경</span><b>1,000원</b></li>
+      </ul>
+    </div>
+
+    <!-- 오른쪽 -->
+    <div class="menu-group">
+      <h3>디저트 & 음료</h3>
+
+      <div class="menu-subtitle">크로플</div>
+      <ul class="menu-list">
+        <li><span>플레인 크로플</span><b>2,500원</b></li>
+        <li><span>치즈 / 바질 크로플</span><b>2,800원</b></li>
+        <li><span>밀크 / 초코 크림샌드</span><b>4,500원</b></li>
+      </ul>
+
+      <div class="menu-subtitle">음료</div>
+      <ul class="menu-list">
+        <li><span>아메리카노</span><b>2,500원</b></li>
+        <li><span>디카페인</span><b>2,800원</b></li>
+        <li><span>콜라 / 제로 / 스프라이트</span><b>2,000원</b></li>
+      </ul>
+    </div>
+  </div>
 </section>
 
-  <section id="sns">
-    <h2>SNS & 후기</h2>
-    <p>
-      📺 <b>유튜브</b>에서 “서울컵밥”을 검색하세요!<br>
-      🍴 <b>네이버플레이스</b>에서 리뷰 작성 시 음료 무료 이벤트 진행 중입니다.<br>
-      <a href="https://www.youtube.com/@seoulcupbop" class="btn">유튜브 바로가기</a>
-      <a href="https://naver.me/FgTZrUGt" class="btn">네이버플레이스 보기</a>
-    </p>
-  </section>
+<!-- 브랜드 소개 -->
+<section class="brand-intro">
+  <h2>브랜드 소개</h2>
 
-  <footer>
-    서울컵밥 | 서울 관악구 봉천동 인헌길 6, 1층 102호 | © SEOUL CUPBOP 2025
-  </footer>
+  <img src="images/cupxcro_ico.png"
+       alt="서울컵밥 x 크로플 아이콘"
+       class="brand-icon">
+
+  <p style="text-align:center; opacity:.7; font-size:1rem; margin-bottom:20px;">
+    식사와 디저트의 균형
+  </p><br>
+
+  <p class="section-desc">
+    서울컵밥은 바쁜 일상 속에서도<br>
+    부담 없이 든든하게 먹을 수 있는 한 끼를 고민합니다.<br><br>
+    합리적인 가격, 빠른 조리, 편한 포장.<br>
+    더 많은 동네에서 만날 수 있도록 준비 중입니다.
+  </p>
+</section>
+
+<!-- 인스타그램 -->
+<section class="instagram">
+  <h2>서울컵밥 인스타그램</h2>
+  <p class="section-desc">
+    신메뉴 · 오픈 소식 · 이벤트는 인스타그램에서 가장 먼저 알려드려요.
+  </p>
+  <a href="https://www.instagram.com/seoulcupbop_official" target="_blank">
+    @seoulcupbop_official →
+  </a>
+</section>
+
+<!-- 위치 -->
+<section class="location">
+  <h2>매장 안내</h2>
+  <p class="section-desc">
+    현재 서울대입구점 인테리어 공사 중이며,<br>
+    더 많은 지역으로 확장 준비 중입니다.
+  </p>
+
+  <a href="https://naver.me/FgTZrUGt" target="_blank">
+    <img src="images/map.jpg" alt="서울컵밥 위치" class="map-img">
+  </a>
+
+  <a href="https://naver.me/FgTZrUGt" target="_blank" class="btn naver-btn">
+    네이버 지도에서 보기
+  </a>
+</section>
+
+<!-- 푸터 -->
+<footer>
+  © 서울컵밥. All rights reserved | SEOULCUPBOP 2025<br> 
+  가볍게 먹는 든든한 한 끼<br>
+  낙성대점 : 서울 관악구 봉천동 인헌길 6, 1층 102호
+</footer>
+
 </body>
 </html>
-
-
-
